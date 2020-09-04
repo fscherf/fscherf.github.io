@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lona - </title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="/static/rtd/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="/static/rtd/documentation_options.js"></script>
+        <script type="text/javascript" src="/static/rtd/jquery.js"></script>
+        <script type="text/javascript" src="/static/rtd/underscore.js"></script>
+        <script type="text/javascript" src="/static/rtd/doctools.js"></script>
+        <script type="text/javascript" src="/static/rtd/language_data.js"></script>
+    
+    <script type="text/javascript" src="/static/rtd/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="/static/rtd/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="/static/rtd/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="/static/rtd.css" type="text/css" />
+
+  
+  <link rel="stylesheet" type="text/css" href="/static/custom.css" />
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="/" class="icon icon-home"> lona</a>
+
+          
+            
+            
+            
+            <div class="version">v0.0-1-ge6c9a43935ec</div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+
+<!--
+      <li class="toctree-l1"><a class="reference internal" href="#"></a></li>
+-->
+
+
+
+  <p class="caption"><span class="caption-text">Documentation</span></p>
+  <ul>
+    
+      
+        <li class="toctree-l1"><a class="reference internal" href="/protocol.html">Protocol</a></li>
+      
+    
+      
+        <li class="toctree-l1"><a class="reference internal" href="/routing.html">Routing</a></li>
+      
+    
+      
+        <li class="toctree-l1"><a class="reference internal" href="/nodes.html">HTML Nodes</a></li>
+      
+    
+      
+        <li class="toctree-l1"><a class="reference internal" href="/views.html">Views</a></li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">lona</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>lona documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            
+  <div id="ractive"></div>
+  
+    <script id="main" type="text/html">
+      <h1>Search{{#if query }} "{{query}}"{{/if}}</h1>
+      {{#results}}
+        <h2>{{.doc.title}}</h2>
+        <a href="{{.ref}}?mark={{query}}">{{.ref}}</a>
+        <hr/>
+      {{/results}}
+    </script>
+  
+
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+  </div>
+  Built with <a href="http://www.flamingo-web.org">Flamingo</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  
+  <script type="text/javascript" src="/static/ractive.min.js"></script>
+  <script type="text/javascript" src="/static/elasticlunr.min.js"></script>
+  <script type="text/javascript" src="/static/helper.js"></script>
+  <script>
+    var ractive = Ractive({
+      target: '#ractive',
+      template: '#main',
+      data: {
+        query: '',
+        results: [],
+      },
+    });
+
+    var index = elasticlunr(function () {
+      this.setRef('id');
+      this.addField('title');
+      this.addField('body');
+    });
+
+    
+      index.addDoc({
+        id: 'index.html',
+        title: "lona",
+        body: "",
+      });
+    
+      index.addDoc({
+        id: 'protocol.html',
+        title: "Protocol",
+        body: "<pre class=\"literal-block\">\nMethods\n-------\n\nVIEW =                 11  # frontend: start a view on the backend\nINPUT_EVENT =          12  # frontend: notify the backend on a input event\nREDIRECT =             13  # backend:  redirect the client to another URL\nHTML =                 14  # backend:  view HTML on the web client\nDESKTOP_NOTIFICATION = 15  # backend:  issue a desktop notification\n\n\nInput events types\n------------------\n\nCLICK =                21  # onClick()\nCHANGE =               22  # onChange()\nSUBMIT =               23  # form.submit()\nRESET =                24  # form.reset()\nCUSTOM =               25\n\n\nEvent payloads\n--------------\n\nClick\n    [CLICK, $DATA, $NODE_ID]\n    [CLICK, $DATA, None, $TAG_NAME, $DIV_ID, $DIV_CLASS]\n\nChange\n    [CHANGE, $DATA, $NODE_ID]\n    [CHANGE, $DATA, None, $TAG_NAME, $DIV_ID, $DIV_CLASS]\n\nSubmit\n    [SUBMIT, $DATA, $NODE_ID]\n    [SUBMIT, $DATA, None, $TAG_NAME, $DIV_ID, $DIV_CLASS]\n\nCustom\n    [$NAME, $DATA, $NODE_ID]\n    [$NAME, $DATA, None, $TAG_NAME, $DIV_ID, $DIV_CLASS]\n\n\nExamples\n--------\n\n&gt;&gt; [VIEW, 'example.org/foo/bar']\n&gt;&gt; [VIEW, 'example.org/foo/bar?foo=bar', {'foo': 'bar'}]\n\n&lt;&lt; [REDIRECT, 'example.org/foo/bar', $INTERACTIVE]\n\n&lt;&lt; [HTML, 'example.org/foo/bar', '&lt;div id=&quot;foo&quot;&gt;&lt;/div&gt;', $INPUT_EVENTS]\n&lt;&lt; [HTML, 'example.org/foo/bar', {'foo': {}},            $INPUT_EVENTS]\n\n&gt;&gt; [INPUT_EVENT, 'example.org/foo/bar', $EVENT_PAYLOAD]\n</pre>",
+      });
+    
+      index.addDoc({
+        id: 'views.html',
+        title: "Views",
+        body: "",
+      });
+    
+      index.addDoc({
+        id: 'routing.html',
+        title: "Routing",
+        body: "",
+      });
+    
+      index.addDoc({
+        id: 'nodes.html',
+        title: "HTML Nodes",
+        body: "",
+      });
+    
+      index.addDoc({
+        id: 'search.html',
+        title: null,
+        body: null,
+      });
+    
+
+    var query = get_get_variable('q');
+
+    if(query) {
+      ractive.set({
+        query: query,
+        results: index.search(query),
+      });
+    }
+  </script>
+
+</body>
+</html>
